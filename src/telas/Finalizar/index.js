@@ -9,7 +9,7 @@ import { AutenticacaoContext } from '../../contexts/AutenticacaoContext';
 import { ProdutosContext } from '../../contexts/ProdutosContext';
 
 
-export default function Resumo({ navigation }) {
+export default function Finalizar({ navigation }) {
 
   const { temaEscolhido } = useContext(TemaContext)
   const { usuario } = useContext(AutenticacaoContext)
@@ -19,21 +19,6 @@ export default function Resumo({ navigation }) {
   return (
     <View style={estilo.container}>
       <StatusBar />
-      <View style={estilo.tituloArea}>
-        <Text style={estilo.titulo}>Olá, {usuario?.nome}</Text>
-        <View style={estilo.carrinhoArea}>
-          <TouchableOpacity onPress={() => { }}>
-            <Feather name="shopping-cart" size={30} color="#fff" style={estilo.carrinhoIcon} />
-          </TouchableOpacity>
-          { quantidade > 0 && <View style={estilo.carrinhoQuantidadeArea}>
-            <Text style={estilo.carrinhoQuantidade}>{quantidade}</Text>
-          </View>
-          }
-          <TouchableOpacity onPress={() => navigation.navigate('Configurações')} style={estilo.iconArea} >
-            <MaterialCommunityIcons name="settings" size={30} color="#fff" style={estilo.icon} />
-          </TouchableOpacity>
-        </View>
-      </View>
 
       <FlatList
         data={carrinho}
@@ -44,7 +29,7 @@ export default function Resumo({ navigation }) {
       />
 
       <TouchableOpacity style={estilo.botao}
-      onPress={()=>{ navigation.navigate("Finalizar")}}>
+      onPress={()=>navigation.navigate("Principal")}>
         <Text style={estilo.botaoTexto}>Finalizar</Text>
       </TouchableOpacity>
     </View>
