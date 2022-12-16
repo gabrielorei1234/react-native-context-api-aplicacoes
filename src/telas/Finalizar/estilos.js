@@ -81,6 +81,13 @@ export const estilos = (tema) => {
     fontWeight: 'bold',
     color: tema.preto,
     textAlign: 'center'
+  },
+  cardInfo:{
+    width:'90%',
+    padding:10,
+    minHeight:100,
+    margin:10,
+    backgroundColor: tema.ultimosVistos
   }
 });
 }
